@@ -1,5 +1,6 @@
 
 const express = require('express');
+const env = require('./config/environment');
 const path = require('path');
 const port = 8000;
 
@@ -11,7 +12,8 @@ const app = express();
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
 app.use(express.urlencoded());
-app.use(express.static('assets'));
+app.use(express.static(env.asset_path));
+console.log("asdf" + env.asset_path);
 
 // const contactList = [
 //     {
