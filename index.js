@@ -11,7 +11,7 @@ const app = express();
 
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended:false}));
 app.use(express.static(env.asset_path));
 console.log("asdf" + env.asset_path);
 
